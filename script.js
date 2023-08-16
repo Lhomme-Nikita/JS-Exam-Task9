@@ -1,8 +1,16 @@
-/* ------------------------------ TASK 9 ---------------------------------------------------------------
-Sukurkite konstruktoriaus funkciją "Movie" (naudokte ES6), kuri sukuria objektus 3 savybėm ir 1 metodu:
+class Movie {
+  constructor(title, director, budget) {
+    this.title = title;
+    this.director = director;
+    this.budget = budget;
+  }
 
-Savybės:
-title, director, budget
-Metodas: 
-wasExpensive() - jeigu filmo budget bus didesnę nei 100 000 000 mln USD, tada gražins true, kitu atveju false 
------------------------------------------------------------------------------------------------------- */
+  wasExpensive() {
+    return this.budget > 100000000;
+  }
+}
+
+
+const starWars = new Movie('Star Wars: The Force Awakens', 'J.J. Abrams', 245000000)
+
+console.log(starWars.title, starWars.wasExpensive())
